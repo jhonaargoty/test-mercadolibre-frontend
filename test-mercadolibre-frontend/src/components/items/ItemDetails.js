@@ -3,42 +3,37 @@ import "./itemDetails.scss";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
+import ItemDetailsItem from "./ItemDetailsItem";
+
 function ItemDetails() {
   const [item, setItem] = useState([]);
   const [itemId] = useState(useParams());
+  const [errApi, setErrApi] = useState("0");
 
   useEffect(() => {
-    async function listSearch() {
-      const response = await axios.get(
-        `http://localhost:8084/api/items/${itemId.id}`
-      );
-      setItem(response.data.item);
-      return response;
+    async function listSearchDetail() {
+      try {
+        const response = await axios.get(
+          `http://localhost:8084/api/items/${itemId.id}`
+        );
+        setItem([response.data.item]);
+
+        return response;
+      } catch (error) {
+        setErrApi(error.response.status);
+      }
     }
-    listSearch();
+
+    listSearchDetail();
   }, [itemId]);
 
   return (
     <div>
-      <div className="detail-layout-item">
-        <div className="detail-item-image">
-          <img alt={item.id} className="item-img" src={item.picture} />
-        </div>
-        <div className="detail-item-content">
-          <div className="detail-item-sold">
-            {item.condition} - {item.sold_quantity} vendidos
-          </div>
-          <div className="detail-item-title">{item.title}</div>
-          <div className="detail-item-price">${item.condition}</div>
-          <div className="detail-item-button">
-            <button className="item-button">Comprar</button>
-          </div>
-        </div>
-      </div>
-      <div className="detail-item-description">
-        <span>Descripcion del producto</span>
-        <p>{item.description}</p>
-      </div>
+      {errApi !== 400 ? (
+        item.map((item) => <ItemDetailsItem key={item.id} item={item} />)
+      ) : (
+        <span className="error">No encontramos lo que buscas :( </span>
+      )}
     </div>
   );
 }

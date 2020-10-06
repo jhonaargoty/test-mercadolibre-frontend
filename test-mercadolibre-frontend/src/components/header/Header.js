@@ -3,7 +3,7 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 
 function Header() {
-  const [itemSearch, setItemSearch] = useState("x");
+  const [itemSearch, setItemSearch] = useState("");
   const mylink = `/items?search=${itemSearch}`;
   return (
     <div>

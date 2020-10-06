@@ -7,3 +7,14 @@ $textColor: #999999;
   color: $textColor;
   padding-left: 16px;
 }
+.breadcrum-category .category:after {
+  content: ">";
+  padding-right: 5px;
+  padding-left: 5px;
+}
+.breadcrum-category .category:last-child:after {
+  content: "";
+}
+.breadcrum-category .category {
+  cursor: pointer;
+}

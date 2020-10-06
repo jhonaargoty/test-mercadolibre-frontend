@@ -1,7 +1,11 @@
 $backgroundColorBotton: #3483fa;
 
 .detail-item-image {
-  width: 680px;
+  width: 60%;
+}
+.item-img {
+  margin: auto;
+  display: block;
 }
 .detail-layout-item {
   display: flex;
@@ -9,6 +13,7 @@ $backgroundColorBotton: #3483fa;
 }
 .detail-item-content {
   padding: 16px 32px 32px 32px;
+  width: 40%;
 }
 .detail-item-sold {
   font-size: 14px;

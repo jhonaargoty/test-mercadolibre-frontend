@@ -9,7 +9,9 @@ function ItemListItem({ img, price, title, location }) {
         </div>
         <div className="search-result-content">
           <div className="search-result-content-a">
-            <div className="search-result-price">$ {price}</div>
+            <div className="search-result-price">
+              $ {new Intl.NumberFormat().format(price)}
+            </div>
             <div className="search-result-title">{title}</div>
           </div>
 

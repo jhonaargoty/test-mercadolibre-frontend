@@ -1,9 +1,21 @@
 import React, { useContext } from "react";
+import BreadcrumbContext from "../../context/BreadcrumbContext";
 
 import "./breadcrumb.scss";
 
-function breadcrumb() {
-  return <div className="breadcrum-category"></div>;
+function Breadcrumb() {
+  const { categories } = useContext(BreadcrumbContext);
+  return (
+    <div className="breadcrum-category">
+      {categories.map((category) =>
+        category.map((cat) => (
+          <span key={cat} className="category">
+            {cat}
+          </span>
+        ))
+      )}
+    </div>
+  );
 }
 
-export default breadcrumb;
+export default Breadcrumb;

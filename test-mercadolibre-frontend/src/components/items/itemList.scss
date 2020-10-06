@@ -4,7 +4,8 @@ $fontSizePrice: 24px;
 $fontSizeTitle: 18px;
 $fontSizeLocation: 12px;
 
-.search-layout-item {
+.search-layout-item,
+.error {
   background-color: $backgroundColor;
   display: flex;
   margin: 0 auto;
@@ -16,7 +17,7 @@ $fontSizeLocation: 12px;
   width: 180px;
   margin: 16px;
 }
-img.item-img {
+.search-result-image .item-img {
   width: 100%;
   border-radius: 4px;
 }
@@ -34,11 +35,17 @@ img.item-img {
 }
 .search-result-content {
   display: flex;
+  width: 70%;
 }
 .search-result-content-a {
-  width: 500px;
+  width: 90%;
 }
 .links {
   text-decoration: none;
   color: $colorText;
+}
+.error {
+  justify-content: center;
+  color: $colorText;
+  font-size: $fontSizePrice;
 }
