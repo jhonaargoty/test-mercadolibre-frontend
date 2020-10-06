@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+
 import "./breadcrumb.scss";
 
 function breadcrumb() {
-  return <div className="breadcrum-category">Electronica - Ipod - Video</div>;
+  return <div className="breadcrum-category"></div>;
 }
 
 export default breadcrumb;

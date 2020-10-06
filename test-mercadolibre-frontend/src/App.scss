@@ -1,4 +1,11 @@
 $backgroundColor: #eeeeee;
+$backgroundColorContent: #ffffff;
 .App {
   background-color: $backgroundColor;
+}
+
+.app-content {
+  margin: 0 auto;
+  max-width: 885px;
+  background-color: $backgroundColorContent;
 }

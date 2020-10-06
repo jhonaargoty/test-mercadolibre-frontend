@@ -1,20 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.scss";
+import { Link } from "react-router-dom";
 
-function header() {
+function Header() {
+  const [itemSearch, setItemSearch] = useState("x");
+  const mylink = `/items?search=${itemSearch}`;
   return (
     <div>
       <header>
         <div className="content-header">
-          <a className="nav-logo content" href="/"></a>
+          <Link to="/">
+            <div className="nav-logo content"></div>
+          </Link>
           <form className="nav-search">
             <input
               className="nav-search-input"
               type="text"
               placeholder="Nunca dejes de buscar"
+              onChange={(e) => setItemSearch(e.target.value)}
             />
-
-            <button className="button-search" type="sumbit"></button>
+            <Link to={mylink}>
+              <button className="button-search" type="sumbit"></button>
+            </Link>
           </form>
         </div>
       </header>
@@ -22,4 +29,4 @@ function header() {
   );
 }
 
-export default header;
+export default Header;

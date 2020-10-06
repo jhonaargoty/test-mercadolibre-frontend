@@ -54,15 +54,17 @@ header {
 }
 
 .nav-search {
-  padding: 8px 1px;
+  padding: 8px 10px;
   position: relative;
   display: inline-flex;
+  width: 100%;
 }
 
 .content-header {
   height: auto;
   display: flex;
   margin: 0 auto;
+  width: 885px;
 }
 
 .nav-search-input {

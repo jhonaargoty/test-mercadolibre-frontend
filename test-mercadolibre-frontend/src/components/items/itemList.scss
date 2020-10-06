@@ -1,12 +1,8 @@
 $backgroundColor: #ffffff;
+$colorText: #666666;
 $fontSizePrice: 24px;
 $fontSizeTitle: 18px;
 $fontSizeLocation: 12px;
-
-.search-layout {
-  margin: 0 auto;
-  max-width: 885px;
-}
 
 .search-layout-item {
   background-color: $backgroundColor;
@@ -41,4 +37,8 @@ img.item-img {
 }
 .search-result-content-a {
   width: 500px;
+}
+.links {
+  text-decoration: none;
+  color: $colorText;
 }
