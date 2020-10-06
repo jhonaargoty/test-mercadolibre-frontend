@@ -16,15 +16,19 @@ $fontSizeLocation: 12px;
   height: 180px;
   width: 180px;
   margin: 16px;
+  .item-img {
+    width: 100%;
+    border-radius: 4px;
+  }
 }
-.search-result-image .item-img {
-  width: 100%;
-  border-radius: 4px;
-}
+
 .search-result-price {
   font-size: $fontSizePrice;
   margin-bottom: 32px;
   margin-top: 20px;
+  .item-img-shipping {
+    padding-left: 10px;
+  }
 }
 .search-result-title {
   font-size: $fontSizeTitle;
@@ -36,9 +40,9 @@ $fontSizeLocation: 12px;
 .search-result-content {
   display: flex;
   width: 70%;
-}
-.search-result-content-a {
-  width: 90%;
+  .search-result-content-a {
+    width: 90%;
+  }
 }
 .links {
   text-decoration: none;

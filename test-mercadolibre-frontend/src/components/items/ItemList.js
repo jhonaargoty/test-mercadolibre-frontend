@@ -44,13 +44,7 @@ function ItemList() {
         {errApi !== 400 ? (
           items.map((item) => (
             <Link to={`/items/${item.id}`} key={item.id} className="links">
-              <ItemListItem
-                key={item.id}
-                img={item.picture}
-                price={item.price.amount}
-                title={item.title}
-                location={item.address}
-              />
+              <ItemListItem item={item} />
             </Link>
           ))
         ) : (
